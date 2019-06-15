@@ -4,7 +4,7 @@ from LINEPY import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
 from time import sleep
-import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, ctypes, urllib, wikipedia
+import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, ctypes, urllib
 from datetime import timedelta, date
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -12,25 +12,28 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 
-aditmadzs = LineClient()
-#aditmadzs = LineClient(authToken='LOGIN TOKEN')
+#aditmadzs = LineClient()
+aditmadzs = LineClient(authToken='EF2XjZgSYapLZ8IGtHuc.0H28zbRLhRgMrqsyhFsMRa.1IEg+761pJ6qZMFqjHk4CBUnQHEOuBagTm4Nrf29HEI=')
 aditmadzs.log("Auth Token : " + str(aditmadzs.authToken))
 channel = LineChannel(aditmadzs)
 aditmadzs.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient()
-#ki = LineClient(authToken='LOGIN TOKEN')
+#ki = LineClient()
+ki = LineClient(authToken='EFBaqGMSHNiChQDEBMi3.QWkyD4fJIKGXLE5UKzg0GW.tG+wK4o8nOzuEbb5LcQXStPvQhMD+mnRKZckcBHi3Z8=')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
 #ubah mid di dalem admin,owner,creator.json dengan mid kalian
+#creator=ผู้สร้าง 
+#owner=
+#admin=คนสั่งบอท+บอทสั่งตัวเอง
 poll = LinePoll(aditmadzs)
 call = aditmadzs
-creator = ["u874a7502c02896b2edbb3445c2615d35"]
-owner = ["u874a7502c02896b2edbb3445c2615d35"]
-admin = ["u874a7502c02896b2edbb3445c2615d35"]
-staff = ["u874a7502c02896b2edbb3445c2615d35"]
+creator = ["u083bdc9ca7257b41cd4d1de933a5ad8e"]
+owner = ["ud21dbc641ae51eb1a64504981df4a6ac"]
+admin = ["ud21dbc641ae51eb1a64504981df4a6ac"]
+staff = ["ud21dbc641ae51eb1a64504981df4a6ac"]
 mid = aditmadzs.getProfile().mid
 Amid = ki.getProfile().mid
 KAC = [aditmadzs,ki]
@@ -437,11 +440,11 @@ def help():
                   "╠❂➣ " + key + "Bot:on\n" + \
                   "╠❂➣ " + key + "Bot:delete\n" + \
                   "╠❂➣ " + key + "Adminadd「@」\n" + \
-                  "╠❂➣ " + key + "Admindell「@」\n" + \
+                  "╠❂➣ " + key + "Admindel「@」\n" + \
                   "╠❂➣ " + key + "Staffadd「@」\n" + \
-                  "╠❂➣ " + key + "Staffdell「@」\n" + \
+                  "╠❂➣ " + key + "Staffdel「@」\n" + \
                   "╠❂➣ " + key + "Botadd「@」\n" + \
-                  "╠❂➣ " + key + "Botdell「@」\n" + \
+                  "╠❂➣ " + key + "Botdel「@」\n" + \
                   "╠❂➣ " + key + "Refresh\n" + \
                   "╠❂➣ " + key + "Listbot\n" + \
                   "╠❂➣ " + key + "Listadmin\n" + \
@@ -451,7 +454,7 @@ def help():
                   " ◄]·✪Aditmadzs✪·[►" + "\n" + \
                   "╠════════════════════╝" + "\n" + \
                   "╠════════════════════╗" + "\n" + \
-                  "◄]·✪line.me/ti/p/~adit_cmct✪·[►" + "\n" + \
+                  "◄]·✪line.me/ti/p/~aumziibot✪·[►" + "\n" + \
                   "╚════════════════════╝"
     return helpMessage
     
@@ -521,7 +524,7 @@ def helpbot():
                   "  ◄]·✪Aditmadzs✪·[►" + "\n" + \
                   "╠════════════════════╝" + "\n" + \
                   "╠════════════════════╗" + "\n" + \
-                  "◄]·✪line.me/ti/p/~adit_cmct✪·[►" + "\n" + \
+                  "◄]·✪line.me/ti/p/~aumziibot✪·[►" + "\n" + \
                   "╚════════════════════╝"
     return helpMessage1
     
@@ -565,7 +568,7 @@ def infomeme():
       ◄]·✪Aditmadzs✪·[►
 ╠══════════════════════════════╝
 ╠══════════════════════════════╗
-◄]·✪line.me/ti/p/~adit_cmct✪·[►
+◄]·✪line.me/ti/p/~aumziibot✪·[►
 ╚══════════════════════════════╝
 """
     return helpMessage2
@@ -692,7 +695,7 @@ def translate():
                        "  Contoh: tr-en Aditmadzs" + "\n" + \
                        "╠══════════════════════════════╝" + "\n" + \
                        "╠══════════════════════════════╗" + "\n" + \
-                       "◄]·✪line.me/ti/p/~adit_cmct✪·[►" + "\n" + \
+                       "◄]·✪line.me/ti/p/~aumziibot✪·[►" + "\n" + \
                        "╚══════════════════════════════╝"
     return helpTranslate
 
@@ -1570,7 +1573,7 @@ def bot(op):
                                pesan = text.replace(sep[0] + " ","")
                                saya = aditmadzs.getGroupIdsJoined()
                                for group in saya:
-                                   aditmadzs.sendMessage(group,"=======[BROADCAST]=======\n\n"+pesan+"\n\nCreator : line.me/ti/p/~adit_cmct")
+                                   aditmadzs.sendMessage(group,"=======[BROADCAST]=======\n\n"+pesan+"\n\nCreator : line.me/ti/p/~aumziibot")
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
@@ -3799,9 +3802,9 @@ def bot(op):
                                            pass
 
 #===========ADMIN ADD============#
-                        elif ("Adminadd " in msg.text):
+                        elif ("Adminadd" in msg.text):
                           if wait["selfbot"] == True:
-                            if msg._from in creator:
+                            if msg._from in owner:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
                                targets = []
@@ -3816,7 +3819,7 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("Staffadd " in msg.text):
+                        elif ("Staffadd" in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -3831,7 +3834,7 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("Botadd " in msg.text):
+                        elif ("Botadd" in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -3846,8 +3849,8 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("Admindell " in msg.text):
-                            if msg._from in creator:
+                        elif ("Admindel" in msg.text):
+                            if msg._from in owner:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
                                targets = []
@@ -3862,7 +3865,7 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("Staffdell " in msg.text):
+                        elif ("Staffdel" in msg.text):
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
@@ -3877,7 +3880,7 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("Botdell " in msg.text):
+                        elif ("Botdel" in msg.text):
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
