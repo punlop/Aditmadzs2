@@ -28,9 +28,9 @@ $ pip3 install thrift==0.11.0
 $ pip3 install tweepy
 $ pip3 install wikipedia
 $ apt install git
-$ git clone https://github.com/Aditmadzs/Aditmadzs2
+$ git clone https://github.com/punlop/Aditmadzs2
 $ cd Aditmadzs2
-$ python3 adit.py
+$ python3 2k.py
 ```
 
 # VPS
@@ -52,8 +52,8 @@ $ sudo pip3 install thrift==0.11.0
 $ sudo pip3 install tweepy
 $ sudo pip3 install wikipedia
 $ sudo apt-get install git
-$ git clone https://github.com/Aditmadzs/Aditmadzs2
+$ git clone https://github.com/punlop/Aditmadzs2
 $ cd Aditmadzs2
-$ python3 adit.py
+$ python3 2k.py
 ```
 
